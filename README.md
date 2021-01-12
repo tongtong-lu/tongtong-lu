@@ -2,7 +2,7 @@
 A decent human being (or so).
 - 🖍 A **product designer** with 2 years experiences in SaaS products. 
 - 💡 Specialize in understanding complex systems and turning that into **intuitive** and **delightful** experiences.
-- ✨ I value **humanity, ethics, and enlightment** when doing design.
+- ✨ I value **humanity, ethics, and enlightenment** when doing design.
 - 🔭 Currently crafting the future of recruitment at Gllue.
 
 
