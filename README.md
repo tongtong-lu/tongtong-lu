@@ -1,6 +1,6 @@
 ### Hi, I’m Tongtong Lu. 👋  
 A decent human being (or so).
-- 🖍 A **product designer** with 2 years experiences in SaaS products. 
+- 🖍 A **product designer** with 3 years experiences in SaaS products. 
 - 💡 Specialize in understanding complex systems and turning that into **intuitive** and **delightful** experiences.
 - ✨ I value **humanity, ethics, and enlightenment** when doing design.
 - 🔭 Currently crafting the future of recruitment at Gllue.
