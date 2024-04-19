@@ -1,5 +1,5 @@
-### Tongtong is crafting data products at [Agora](https://www.agora.io/).
+### Tongtong is crafting tools to boost productivity at [miHoYo](https://www.mihoyo.com/).
 
-🎨 Designer / 🙌🏻 Maker / 📚 Learner. Previously [Gllue](http://gllue.com/). 
+🎨 Designer / 🙌🏻 Maker / 📚 Learner. Previously at [Agora](https://www.agora.io/) and [Gllue](http://gllue.com/). 
 
-📂 [Portfolio](https://tongtong.design/) · 📧 [Email](mailto:lutongtongchina@gmail.com) · 📃 [Blog](https://tongtonglu.site/)
+📂 [Portfolio](https://tongtonglu.site/) · 📧 [Email](mailto:lutongtongchina@gmail.com)
