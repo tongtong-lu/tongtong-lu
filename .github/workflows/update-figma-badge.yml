@@ -1,0 +1,79 @@
+name: Update Figma badge
+
+on:
+  schedule:
+    - cron: "17 2 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Figma user count
+        id: figma
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          url="https://r.jina.ai/https://www.figma.com/community/plugin/1119623265256000093/figma-short-link"
+          count=""
+
+          for attempt in 1 2 3; do
+            content="$(curl --fail --silent --show-error --max-time 45 "$url" || true)"
+            count="$(printf '%s' "$content" \
+              | grep -oE '[0-9]+(\.[0-9]+)?[kKmM]? users' \
+              | head -n 1 \
+              | cut -d ' ' -f 1 \
+              || true)"
+
+            if [[ "$count" =~ ^[0-9]+(\.[0-9]+)?[kKmM]?$ ]]; then
+              break
+            fi
+
+            sleep $((attempt * 10))
+          done
+
+          if [[ ! "$count" =~ ^[0-9]+(\.[0-9]+)?[kKmM]?$ ]]; then
+            echo "No valid Figma user count found; keeping the previous badge value."
+            exit 1
+          fi
+
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+
+      - name: Update README
+        env:
+          FIGMA_USERS: ${{ steps.figma.outputs.count }}
+        run: |
+          node <<'NODE'
+          const fs = require('fs')
+
+          const path = 'README.md'
+          const before = fs.readFileSync(path, 'utf8')
+          const pattern = /(https:\/\/img\.shields\.io\/badge\/Figma%20Short%20Link-)[^-]+(-6F6F6F\?style=flat-square&logo=figma&logoColor=white)/
+
+          if (!pattern.test(before)) {
+            throw new Error('Figma badge not found in README.md')
+          }
+
+          const after = before.replace(pattern, `$1${process.env.FIGMA_USERS}$2`)
+          fs.writeFileSync(path, after)
+          NODE
+
+      - name: Commit updated count
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "Figma user count has not changed."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: update Figma user count"
+          git push
