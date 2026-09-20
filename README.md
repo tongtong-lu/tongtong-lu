@@ -23,6 +23,6 @@
   
 **💼 Work Experience**
 
-🐳 `2025 - Now` **[![Fish Audio](https://img.shields.io/github/stars/fishaudio/fish-speech?style=flat-square&logo=fishaudio&logoColor=white&label=Fish%20Audio&color=6F6F6F)](https://github.com/fishaudio/fishspeech)** — Founding Designer, part-time → full-time<br>
+🐳 `2025 - Now` **[![Fish Audio](https://img.shields.io/github/stars/fishaudio/fish-speech?style=flat-square&logo=fishaudio&logoColor=white&label=Fish%20Audio&color=6F6F6F)](https://github.com/fishaudio/fish-speech)** — Founding Designer, part-time → full-time<br>
 🎮 `2024 - 2026` **HoYoverse** — Product Designer  <br>
 💠 `2021 - 2023` **Agora.io** — Product Designer 
